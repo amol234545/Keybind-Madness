@@ -1,5 +1,6 @@
 # Project place file
-/Keybind-Madness.rbxlx
+*.rbxl
+*.rbxlx
 
 # Roblox Studio lock files
 /*.rbxlx.lock
