@@ -13,14 +13,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: duhow/download-github-release-assets@v1.1.1
+      - name: Rojo Build
+        uses: CompeyDev/rojo-build-action@0.1.5
         with:
-         repo: rojo-rbx/rojo
-         # The release ID version to fetch from.
-         version: v7.3.0
-         file: rojo-7.3.0-linux-x86_64.zip
-      - name: "Unzip and test" 
-        run: |
-          unzip rojo-7.3.0-linux-x86_64.zip -d ./
-          cd ./rojo/
-          rojo.exe
+         # File to write to (excluding file type)
+         output: bulid
+         # The type of file to be outputted
+         type: rbxl
+      
