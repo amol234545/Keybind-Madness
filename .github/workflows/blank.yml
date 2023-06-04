@@ -17,7 +17,7 @@ jobs:
         uses: valitydev/action-download-file@v1.0.6
         with:
          # URL to file
-         url: "https://cdn.glitch.global/f38d07d6-fda7-4d62-8379-e6a451574d43/wally?v=1685909935167"
+         url: "https://cdn.glitch.global/f38d07d6-fda7-4d62-8379-e6a451574d43/wally"
       - name: "Install"
         run: "wally install"
       - name: Rojo Build
