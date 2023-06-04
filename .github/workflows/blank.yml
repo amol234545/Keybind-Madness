@@ -1,12 +1,8 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
+name: "RUN"
 on:
+  workflow_dispatch:
   schedule:
   - cron: "0 12 * * SUN"
-  workflow_dispatch:
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -17,7 +13,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Download GitHub Release Assets
       - uses: duhow/download-github-release-assets@v1.1.1
         with:
          repo: rojo-rbx/rojo
