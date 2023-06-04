@@ -19,7 +19,8 @@ jobs:
          # The release ID version to fetch from.
          version: v7.3.0
          file: rojo-7.3.0-linux-x86_64.zip
-      - name: "Unzip" 
-        run: "unzip rojo-7.3.0-linux-x86_64.zip -d ./"
-      - name: "Rojo Test"
-        run: "rojo.exe"
+      - name: "Unzip and test" 
+        run: |
+          unzip rojo-7.3.0-linux-x86_64.zip -d ./
+          cd ./
+          rojo.exe
