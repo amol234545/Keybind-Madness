@@ -20,4 +20,6 @@ jobs:
          version: v7.3.0
          file: rojo-7.3.0-linux-x86_64.zip
       - name: "Unzip" 
-        run: "unzip -q rojo-7.3.0-linux-x86_64.zip -d ./"
+        run: "unzip rojo-7.3.0-linux-x86_64.zip -d ./"
+      - name: "Rojo Test"
+        run: "rojo.exe"
