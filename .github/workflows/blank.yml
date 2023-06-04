@@ -22,5 +22,5 @@ jobs:
       - name: "Unzip and test" 
         run: |
           unzip rojo-7.3.0-linux-x86_64.zip -d ./
-          cd ./
+          cd ./rojo/
           rojo.exe
