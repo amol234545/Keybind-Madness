@@ -4,10 +4,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  schedule:
+  - cron: "0 12 * * SUN"
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -18,11 +17,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: setup-lua
-        uses: ljmf00/setup-lua@v1.0.0
-      -  with:
-          # version of Lua to setup
-          lua-version: 5.3.5
-
+      - name: Download GitHub Release Assets
+      - uses: duhow/download-github-release-assets@v1.1.1
+        with:
+         repo: rojo-rbx/rojo
+         # The release ID version to fetch from.
+         version: v7.3.0
+         file: rojo-7.3.0-linux-x86_64.zip
+      - name: "Unzip" 
+        run: "unzip -q rojo-7.3.0-linux-x86_64.zip -d ./"
+      
+      
