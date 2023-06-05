@@ -13,8 +13,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: "Download Wally"
-        run: "wget https://cdn.glitch.global/f38d07d6-fda7-4d62-8379-e6a451574d43/wally & wally install"
       - name: Rojo Build
         uses: CompeyDev/rojo-build-action@0.1.5
         with:
@@ -22,4 +20,15 @@ jobs:
          output: bulid
          # The type of file to be outputted
          type: rbxl
+      - name: Publish Roblox Place
+        uses: filiptibell/roblox-place-publish-action@v2.1
+        with:
+        # The universe id of the place to publish
+        universe-id: # default is -1
+        # The place id of the place to publish
+        place-id: # default is -1
+        # The Open Cloud API key with permissions to publish the place
+        api-key: # default is 
+        # The path to the place file to publish
+        path: # default is place.rbxl
       
