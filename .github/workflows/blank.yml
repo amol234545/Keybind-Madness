@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3.1.4  
       - name: Install wally
-        run: 'python script\wally_installer.py'
+        run: 'python script\\wally_installer.py'
       - name: Rojo Build
         uses: CompeyDev/rojo-build-action@0.1.5
         with:
