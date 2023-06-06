@@ -1,7 +1,8 @@
-import zipfile
 import os
-import requests
 import pathlib
+import zipfile
+
+import requests
 
 
 def download_file(url):
@@ -20,4 +21,4 @@ path = download_file(requests.get(requests.get(requests.get("https://api.github.
 zip = zipfile.ZipFile(path,"r")
 folder_path = str(path).split(".zip")[0]
 zip.extractall(folder_path)
-os.system(pathlib.Path(folder_path).joinpath("wally").__str__() + " install")
+os.system(pathlib.Path(folder_path).joinpath(os.listdir(folder_path)[0]).__str__() + " install")
