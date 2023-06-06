@@ -14,7 +14,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Setup Python
-        uses: actions/setup-python@v3.1.4  
+        uses: actions/setup-python@v3.1.4 
+      - run: "pip install os pathlib requests zipfile"
       - name: Install wally
         run: 'python script//wally_installer.py'
       - name: Rojo Build
