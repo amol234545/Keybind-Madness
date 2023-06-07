@@ -24,7 +24,7 @@ jobs:
       - name: Publish Roblox Place
         uses: filiptibell/roblox-place-publish-action@v2.1
         with:
-         universe-id: # default is -1
-         place-id: # default is -1
-         api-key: # default is 
-         path: # default is place.rbxl
+         universe-id: 4749284128
+         place-id: 13683998630
+         api-key: ${{secrets.API_KEY}} 
+         path: bulid.rbxl
